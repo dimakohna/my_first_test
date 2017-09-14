@@ -16,7 +16,6 @@ import static config.MyListener.getDriver;
 
 public class AndroidConfig {
     protected final String APP_PACKAGE_NAME="com.erminesoft.ngc:id/";
-    private AndroidDriver androidDriver;
     private final String UDID_MOTOROLA="ZX1B24GVX2";
 
 
