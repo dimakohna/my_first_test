@@ -1,6 +1,10 @@
 import config.AndroidConfig;
+import config.MyListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import scenarios.RegistrationUser;
 
+@Listeners(MyListener.class)
 public class AndroidTesting extends AndroidConfig {
 
     @org.testng.annotations.BeforeClass
@@ -11,6 +15,7 @@ public class AndroidTesting extends AndroidConfig {
 
     @Test
     public void mainTest(){
-        
+        RegistrationUser registrationUser = new RegistrationUser();
+        registrationUser.registerValidUser();
     }
 }

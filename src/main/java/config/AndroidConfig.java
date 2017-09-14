@@ -11,45 +11,45 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static config.MyListener.getDriver;
+
 
 public class AndroidConfig {
+    protected final String APP_PACKAGE_NAME="com.erminesoft.ngc:id/";
     private AndroidDriver androidDriver;
     private final String UDID_MOTOROLA="ZX1B24GVX2";
 
-    public void tap(By element){
-        getAndroidDriver().findElement(element).click();
-    }
 
     public void waitAndTap(By element){
-        WebDriverWait wait = new WebDriverWait(getAndroidDriver(), 30);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-        getAndroidDriver().findElement(element).click();
+        getDriver().findElement(element).click();
     }
 
     private void setText(By element, String text){
-        getAndroidDriver().findElement(element).sendKeys(text);
+        getDriver().findElement(element).sendKeys(text);
 
     }
 
     public void waitAndSetText(By element, String text) {
-        WebDriverWait wait = new WebDriverWait(getAndroidDriver(), 30);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-        getAndroidDriver().findElement(element).sendKeys(text);
+        getDriver().findElement(element).sendKeys(text);
     }
 
     public void waitElement(By element){
-        WebDriverWait wait = new WebDriverWait(getAndroidDriver(), 30);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
 
-    public AndroidDriver getAndroidDriver() {
+    /*public AndroidDriver getAndroidDriver() {
         return androidDriver;
     }
 
     public void setAndroidDriver(AndroidDriver androidDriver) {
         this.androidDriver = androidDriver;
-    }
+    }  */
 
     public void prepareAndroidDevice(String buildName){
         String platform = "Android";
@@ -64,7 +64,8 @@ public class AndroidConfig {
         capabilities.setCapability("app", APP);
 
         try {
-            setAndroidDriver(new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities));
+            AndroidDriver androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+            MyListener.setDriver(androidDriver);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
