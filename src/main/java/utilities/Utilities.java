@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriverException;
 
 import java.io.File;
+import java.util.Random;
 
 import static config.MyListener.getDriver;
 
@@ -56,4 +57,43 @@ public class Utilities {
         }
     }
 
+    public static String generateValidEmail() {
+        final short minLength = 3;
+        final short maxLength = 150;
+        final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._0123456789";
+        String validEmail;
+        do {
+            validEmail = null;
+            StringBuilder part1 = new StringBuilder();
+            StringBuilder part2 = new StringBuilder();
+            StringBuilder part3 = new StringBuilder();
+            int part1Length = new Random().nextInt(145) + 1;
+            int part2Length = new Random().nextInt(146 - part1Length) + 1;
+            int part3Length = new Random().nextInt(147 - part1Length - part2Length) + 1;
+
+            if (part1Length < 1 || part2Length < 1 || part3Length < 1) {
+                System.out.println("error: part1Length = " + part1Length);
+                System.out.println("error: part2Length = " + part2Length);
+                System.out.println("error: part3Length = " + part3Length);
+            }
+            for (int x = 0; x < part1Length; x++) {
+                int randomSymbol = new Random().nextInt(allowedSymbols.length() - 1);
+                part1.append(allowedSymbols.charAt(randomSymbol));
+            }
+            for (int x = 0; x < part2Length; x++) {
+                int randomSymbol = new Random().nextInt(allowedSymbols.length() - 1);
+                part2.append(allowedSymbols.charAt(randomSymbol));
+            }
+            for (int x = 0; x < part3Length; x++) {
+                int randomSymbol = new Random().nextInt(allowedSymbols.length() - 1);
+                part3.append(allowedSymbols.charAt(randomSymbol));
+            }
+
+
+            validEmail = part1 + "@" + part2 + "." + part3;
+        } while (validEmail.length() < minLength || validEmail.length() > maxLength);
+        System.out.println("generateValidEmail: " + validEmail);
+        return validEmail;
+
+    }
 }
