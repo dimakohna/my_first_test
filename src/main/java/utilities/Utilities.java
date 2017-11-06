@@ -122,5 +122,31 @@ public class Utilities {
         return validPassword.toString();
 
     }
+    public static String generateValidName() {
+        final short minLength = 2;
+        final short maxLength = 40;
+        final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._'";
+        StringBuilder validName;
+        do {
+            //validName = null;
+            StringBuilder part1 = new StringBuilder();
+            int part1Length = new Random().nextInt(39) + 1;
+
+
+            if (part1Length < 2 ) {
+                System.out.println("error: part1Length = " + part1Length);
+
+            }
+            for (int x = 0; x < part1Length; x++) {
+                int randomSymbol = new Random().nextInt(allowedSymbols.length() - 1);
+                part1.append(allowedSymbols.charAt(randomSymbol));
+            }
+
+            validName = part1;
+        } while (validName.length() < minLength || validName.length() > maxLength);
+        System.out.println("generateValidEmail: " + validName);
+        return validName.toString();
+
+    }
 
 }

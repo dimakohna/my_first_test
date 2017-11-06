@@ -15,6 +15,11 @@ public class RegistrationUser {
         Utilities.swipingToDown();
         String validPassword = Utilities.generateValidPassword();
         signUpPage.setPassword(validPassword);
+        signUpPage.setConfirmPassword(validPassword);
+        String validName = Utilities.generateValidName();
+        signUpPage.setName(validName);
+
+
 
 
 
