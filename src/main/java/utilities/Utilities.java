@@ -96,4 +96,31 @@ public class Utilities {
         return validEmail;
 
     }
+    public static String generateValidPassword() {
+        final short minLength = 8;
+        final short maxLength = 30;
+        final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._0123456789";
+        StringBuilder validPassword;
+        do {
+            validPassword = null;
+            StringBuilder part1 = new StringBuilder();
+            int part1Length = new Random().nextInt(29) + 1;
+
+
+            if (part1Length < 8 ) {
+                System.out.println("error: part1Length = " + part1Length);
+
+            }
+            for (int x = 0; x < part1Length; x++) {
+                int randomSymbol = new Random().nextInt(allowedSymbols.length() - 1);
+                part1.append(allowedSymbols.charAt(randomSymbol));
+            }
+
+            validPassword = part1;
+        } while (validPassword.length() < minLength || validPassword.length() > maxLength);
+        System.out.println("generateValidEmail: " + validPassword);
+        return validPassword.toString();
+
+    }
+
 }

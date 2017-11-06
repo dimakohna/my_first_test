@@ -12,6 +12,11 @@ public class RegistrationUser {
         SignUpPage signUpPage = new SignUpPage();
         String validEmail = Utilities.generateValidEmail();
         signUpPage.setEmail(validEmail);
+        Utilities.swipingToDown();
+        String validPassword = Utilities.generateValidPassword();
+        signUpPage.setPassword(validPassword);
+
+
 
 
     }

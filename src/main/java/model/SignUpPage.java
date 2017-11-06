@@ -22,13 +22,9 @@ public class SignUpPage extends AndroidConfig {
         waitAndTap(nextStepBtn);
     }
 
-    public void setEmail(String text) {
-        waitAndSetText(email, text);
-    }
+    public void setEmail(String text) {waitAndSetText(email, text);}
 
-    public void setPassword(String text) {
-        waitAndSetText(password, text);
-    }
+    public void setPassword(String text) {waitAndSetText(password, text);}
 
     public void setConfirmPassword(String text) {
         waitAndSetText(confirmPassword, text);
