@@ -42,9 +42,6 @@ public class AndroidConfig {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
-    public void scrollTo(By element){
-        getDriver().scrollTo("User agrees with terms of service");
-    }
 
 
     /*public AndroidDriver getAndroidDriver() {

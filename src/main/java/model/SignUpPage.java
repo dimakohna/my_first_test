@@ -4,6 +4,8 @@ package model;
 import config.AndroidConfig;
 import org.openqa.selenium.By;
 
+import static config.MyListener.getDriver;
+
 public class SignUpPage extends AndroidConfig {
 
     final private By email = By.id(APP_PACKAGE_NAME + "welcome_sign_up_email");
@@ -32,11 +34,9 @@ public class SignUpPage extends AndroidConfig {
         waitAndSetText(name, text);
     }
 
-    public void setCheckBox() {
-        waitAndTap(checkBox);
-    }
+    public void setCheckBox() {waitAndTap(checkBox);}
 
-    public void scrollTo(){scrollTo(checkBox);}
+    public void scrollTo(){getDriver().scrollTo("User agrees with terms of service");}
 
     public void setDateOfBirth() {
         waitAndTap(dateOfBirth);
@@ -47,7 +47,4 @@ public class SignUpPage extends AndroidConfig {
         waitElement(someText);
     }
 
-    public By getCheckBox() {
-        return checkBox;
-    }
 }
