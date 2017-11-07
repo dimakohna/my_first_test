@@ -24,7 +24,8 @@ public class RegistrationUser {
         Utilities.hideKeyboard();
         signUpPage.scrollTo();
         signUpPage.setCheckBox();
-        
+        signUpPage.setDateOfBirth();
+        signUpPage.nextStepBtn();
 
 
 

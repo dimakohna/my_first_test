@@ -125,7 +125,7 @@ public class Utilities {
     public static String generateValidName() {
         final short minLength = 2;
         final short maxLength = 40;
-        final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._'";
+        final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._ '";
         StringBuilder validName;
         do {
             //validName = null;

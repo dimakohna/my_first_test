@@ -14,7 +14,7 @@ public class SignUpPage extends AndroidConfig {
     final private By name = By.id(APP_PACKAGE_NAME + "welcome_sign_up_name");
     final private By checkBox = By.id(APP_PACKAGE_NAME + "welcome_sign_up_terms_and_conditions_checkbox");
     final private By nextStepBtn = By.id(APP_PACKAGE_NAME + "welcome_sign_up_next_button");
-    final private By someText = By.id("someText");
+    final private By someText = By.name("User agrees with terms of service");
     final private By dateOfBirth = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
     final private By dateOfBirthSet = By.id(APP_PACKAGE_NAME + "ok");
     final private By dateOfBirthField = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
@@ -38,13 +38,16 @@ public class SignUpPage extends AndroidConfig {
 
     public void scrollTo(){getDriver().scrollTo("User agrees with terms of service");}
 
+
     public void setDateOfBirth() {
         waitAndTap(dateOfBirth);
         waitAndTap(dateOfBirthSet);
     }
 
+
     public void waitLoadedPage() {
         waitElement(someText);
     }
+    public void nextStepBtn(){waitAndTap(nextStepBtn);}
 
 }
