@@ -2,6 +2,7 @@ package config;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +40,10 @@ public class AndroidConfig {
     public void waitElement(By element){
         WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+
+    public void scrollTo(By element){
+        getDriver().scrollTo("User agrees with terms of service");
     }
 
 

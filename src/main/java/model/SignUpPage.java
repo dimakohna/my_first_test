@@ -10,17 +10,15 @@ public class SignUpPage extends AndroidConfig {
     final private By password = By.id(APP_PACKAGE_NAME + "welcome_sign_up_password");
     final private By confirmPassword = By.id(APP_PACKAGE_NAME + "welcome_sign_up_confirm_password");
     final private By name = By.id(APP_PACKAGE_NAME + "welcome_sign_up_name");
-    final private By checkBox = By.id("checkBox");
-    final private By nextStepBtn = By.id("nextStepBtn");
+    final private By checkBox = By.id(APP_PACKAGE_NAME + "welcome_sign_up_terms_and_conditions_checkbox");
+    final private By nextStepBtn = By.id(APP_PACKAGE_NAME + "welcome_sign_up_next_button");
     final private By someText = By.id("someText");
     final private By dateOfBirth = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
     final private By dateOfBirthSet = By.id(APP_PACKAGE_NAME + "ok");
     final private By dateOfBirthField = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
 
 
-    public void clickNextStep() {
-        waitAndTap(nextStepBtn);
-    }
+    public void clickNextStep() {waitAndTap(nextStepBtn);}
 
     public void setEmail(String text) {waitAndSetText(email, text);}
 
@@ -38,6 +36,8 @@ public class SignUpPage extends AndroidConfig {
         waitAndTap(checkBox);
     }
 
+    public void scrollTo(){scrollTo(checkBox);}
+
     public void setDateOfBirth() {
         waitAndTap(dateOfBirth);
         waitAndTap(dateOfBirthSet);
@@ -47,5 +47,7 @@ public class SignUpPage extends AndroidConfig {
         waitElement(someText);
     }
 
-
+    public By getCheckBox() {
+        return checkBox;
+    }
 }

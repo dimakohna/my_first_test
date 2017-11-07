@@ -59,7 +59,7 @@ public class Utilities {
 
     public static String generateValidEmail() {
         final short minLength = 3;
-        final short maxLength = 150;
+        final short maxLength = 30;
         final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._0123456789";
         String validEmail;
         do {
@@ -67,9 +67,9 @@ public class Utilities {
             StringBuilder part1 = new StringBuilder();
             StringBuilder part2 = new StringBuilder();
             StringBuilder part3 = new StringBuilder();
-            int part1Length = new Random().nextInt(145) + 1;
-            int part2Length = new Random().nextInt(146 - part1Length) + 1;
-            int part3Length = new Random().nextInt(147 - part1Length - part2Length) + 1;
+            int part1Length = new Random().nextInt(25) + 1;
+            int part2Length = new Random().nextInt(26 - part1Length) + 1;
+            int part3Length = new Random().nextInt(52 - part1Length - part2Length) + 1;
 
             if (part1Length < 1 || part2Length < 1 || part3Length < 1) {
                 System.out.println("error: part1Length = " + part1Length);
@@ -98,13 +98,13 @@ public class Utilities {
     }
     public static String generateValidPassword() {
         final short minLength = 8;
-        final short maxLength = 30;
+        final short maxLength = 25;
         final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._0123456789";
         StringBuilder validPassword;
         do {
             validPassword = null;
             StringBuilder part1 = new StringBuilder();
-            int part1Length = new Random().nextInt(29) + 1;
+            int part1Length = new Random().nextInt(24) + 1;
 
 
             if (part1Length < 8 ) {
@@ -118,7 +118,7 @@ public class Utilities {
 
             validPassword = part1;
         } while (validPassword.length() < minLength || validPassword.length() > maxLength);
-        System.out.println("generateValidEmail: " + validPassword);
+        System.out.println("generateValidPassword: " + validPassword);
         return validPassword.toString();
 
     }
@@ -144,7 +144,7 @@ public class Utilities {
 
             validName = part1;
         } while (validName.length() < minLength || validName.length() > maxLength);
-        System.out.println("generateValidEmail: " + validName);
+        System.out.println("generateValidName: " + validName);
         return validName.toString();
 
     }
