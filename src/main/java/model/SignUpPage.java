@@ -18,7 +18,8 @@ public class SignUpPage extends AndroidConfig {
     final private By dateOfBirth = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
     final private By dateOfBirthSet = By.id(APP_PACKAGE_NAME + "ok");
     final private By dateOfBirthField = By.id(APP_PACKAGE_NAME + "welcome_sign_up_age");
-
+    final private By soneTag = By.id(APP_PACKAGE_NAME + "welcome_sign_up_games_tag");
+    final private By createAccount = By.id(APP_PACKAGE_NAME + "welcome_sign_up_create_account");
 
     public void clickNextStep() {waitAndTap(nextStepBtn);}
 
@@ -45,9 +46,9 @@ public class SignUpPage extends AndroidConfig {
     }
 
 
-    public void waitLoadedPage() {
-        waitElement(someText);
-    }
+    public void waitLoadedPage() {waitElement(someText);}
     public void nextStepBtn(){waitAndTap(nextStepBtn);}
+    public void selectTag(){waitAndTap(soneTag);}
+    public void setCreateAccount(){waitAndTap(createAccount);}
 
 }

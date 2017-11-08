@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import model.SignInPage;
 import model.SignUpPage;
 import utilities.Utilities;
+import model.SeshWallPage;
 
 public class RegistrationUser {
     public void registerValidUser(){
@@ -26,6 +27,11 @@ public class RegistrationUser {
         signUpPage.setCheckBox();
         signUpPage.setDateOfBirth();
         signUpPage.nextStepBtn();
+        signUpPage.selectTag();
+        signUpPage.setCreateAccount();
+        SeshWallPage seshWallPage = new SeshWallPage();
+        seshWallPage.waitLoadedPage();
+
 
 
 
