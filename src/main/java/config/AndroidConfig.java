@@ -1,7 +1,9 @@
 package config;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,6 +44,18 @@ public class AndroidConfig {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
+    public static void swipeLeft()  {
+        AndroidDriver androidDriver = MyListener.getDriver();
+        androidDriver.context("NATIVE_APP");
+        Dimension size = androidDriver.manage().window().getSize();
+        int endx = (int) (size.width * 0.8);
+        int startx = (int) (size.width * 0.05);
+        int starty = size.height / 2;
+        androidDriver.swipe(startx, starty, endx, starty, 100);
+        System.out.println("OPEN DROWER");
+    }
+
+
 
 
     /*public AndroidDriver getAndroidDriver() {
@@ -77,4 +91,5 @@ public class AndroidConfig {
 
 
     }
+
 }

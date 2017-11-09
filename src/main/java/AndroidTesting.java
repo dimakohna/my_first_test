@@ -20,6 +20,7 @@ public class AndroidTesting extends AndroidConfig {
         registrationUser.registerValidUser();
     }
 
+
     @AfterClass
     public void tearDown() throws InterruptedException {
         Thread.sleep(15000);

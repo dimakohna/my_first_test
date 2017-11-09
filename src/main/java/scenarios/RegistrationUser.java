@@ -1,11 +1,14 @@
 package scenarios;
 
 
+import config.AndroidConfig;
 import io.appium.java_client.android.AndroidDriver;
 import model.SignInPage;
 import model.SignUpPage;
 import utilities.Utilities;
 import model.SeshWallPage;
+
+import java.net.MalformedURLException;
 
 public class RegistrationUser {
     public void registerValidUser(){
@@ -31,11 +34,6 @@ public class RegistrationUser {
         signUpPage.setCreateAccount();
         SeshWallPage seshWallPage = new SeshWallPage();
         seshWallPage.waitLoadedPage();
-
-
-
-
-
 
 
 

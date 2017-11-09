@@ -3,10 +3,15 @@ package utilities;
 
 import config.MyListener;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileDriver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Random;
 
 import static config.MyListener.getDriver;
@@ -124,13 +129,13 @@ public class Utilities {
     }
     public static String generateValidName() {
         final short minLength = 2;
-        final short maxLength = 40;
+        final short maxLength = 20;
         final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._ '";
         StringBuilder validName;
         do {
             //validName = null;
             StringBuilder part1 = new StringBuilder();
-            int part1Length = new Random().nextInt(39) + 1;
+            int part1Length = new Random().nextInt(19) + 2;
 
 
             if (part1Length < 2 ) {
@@ -148,5 +153,6 @@ public class Utilities {
         return validName.toString();
 
     }
+
 
 }
