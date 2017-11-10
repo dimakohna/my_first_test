@@ -10,6 +10,7 @@ public class SeshWallPage extends AndroidConfig {
     final private By takePhotoCamera = By.id(APP_PACKAGE_NAME + "select_dialog_from_camera"); //choose in list
     final private By takePhotoCamera2 = By.id(APP_PACKAGE_NAME + "preview_surface");  //take photo on camera screen
     final private By approvePhoto = By.id(APP_PACKAGE_NAME + "review_approve");  //approve took photo
+    final private By makePostBtn = By.id(APP_PACKAGE_NAME + "make_post_btn");
 
 
 
@@ -20,6 +21,7 @@ public class SeshWallPage extends AndroidConfig {
     public void clickTakePhotoCamera(){waitAndTap(takePhotoCamera);}
     public void clickTakePhotoCamera2(){waitAndTap(takePhotoCamera2);}
     public void setApprovePhoto(){waitAndTap(approvePhoto);}
+    public void putMakePostBtn(){waitAndTap(makePostBtn);}
 
 
 }

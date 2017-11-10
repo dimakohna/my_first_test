@@ -107,7 +107,7 @@ public class Utilities {
         final String allowedSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._0123456789";
         StringBuilder validPassword;
         do {
-            validPassword = null;
+            //validPassword = null;
             StringBuilder part1 = new StringBuilder();
             int part1Length = new Random().nextInt(24) + 1;
 

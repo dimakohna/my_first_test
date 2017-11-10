@@ -4,6 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import scenarios.RegistrationUser;
+import scenarios.SomeCase;
 
 @Listeners(MyListener.class)
 public class AndroidTesting extends AndroidConfig {
@@ -18,6 +19,12 @@ public class AndroidTesting extends AndroidConfig {
     public void mainTest(){
         RegistrationUser registrationUser = new RegistrationUser();
         registrationUser.registerValidUser();
+    }
+
+    @Test
+    public void makePost(){
+        SomeCase someCase = new SomeCase();
+        someCase.someCase();
     }
 
 
